@@ -31,7 +31,7 @@ class TestOrderFlow:
         """测试用户登录后能否成功下单"""
         # 准备测试数据
         username = "test_user"
-        password = "test123456"
+        password = "test1234560"
         item_id = 1
         quantity = 2
         
