@@ -1,0 +1,33 @@
+# 测试数据管理
+test_users:
+  valid_user:
+    username: "test_user"
+    password: "test123456"
+  
+  invalid_user:
+    username: "wrong_user"
+    password: "wrong_password"
+
+test_items:
+  valid_item:
+    id: 1
+    name: "测试商品"
+  
+  out_of_stock_item:
+    id: 999
+    name: "不存在的商品"
+
+order_cases:
+  success_case:
+    username: "test_user"
+    password: "test123456"
+    item_id: 1
+    quantity: 2
+    expected: "should_success"
+  
+  invalid_item_case:
+    username: "test_user"
+    password: "test123456"
+    item_id: 999
+    quantity: 1
+    expected: "should_fail"
