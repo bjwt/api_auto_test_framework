@@ -2,7 +2,7 @@
 test_users:
   valid_user:
     username: "test_user"
-    password: "test123456"
+    password: "test1234567"
   
   invalid_user:
     username: "wrong_user"
