@@ -17,7 +17,7 @@ def load_test_data(data_type):
             {
                 'username': 'test_user',
                 'password': 'test123456',
-                'item_id': 999,         # 不存在的商品 → 预期失败
+                'item_id': 9990,         # 不存在的商品 → 预期失败
                 'quantity': 1,
                 'expected': 'should_fail'
             },
