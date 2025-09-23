@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Sat Sep 20 12:31:01 CST 2025","Sat Sep 20 12:31:01 CST 2025","3","test_cases","test_order_flow","TestOrderFlow","","","正向用例：登录后成功创建订单","测试用户登录后能否成功下单"
+"passed","Sun Sep 21 14:46:27 CST 2025","Sun Sep 21 14:46:27 CST 2025","8","test_cases","test_order_flow","TestOrderFlow","","","下单功能数据驱动测试 - 1","测试数据: 用户=test_user, 商品=1, 数量=2, 预期=should_success"
+"passed","Sun Sep 21 14:46:27 CST 2025","Sun Sep 21 14:46:27 CST 2025","8","test_cases","test_order_flow","TestOrderFlow","","","下单功能数据驱动测试 - 1","测试数据: 用户=test_user, 商品=1, 数量=1000, 预期=should_fail"
+"broken","Sun Sep 21 14:46:27 CST 2025","Sun Sep 21 14:46:27 CST 2025","7","test_cases","test_order_flow","TestOrderFlow","","","正向用例：登录后成功创建订单","测试用户登录后能否成功下单"
+"broken","Sat Sep 20 12:31:01 CST 2025","Sat Sep 20 12:31:01 CST 2025","0","test_cases","test_order_flow","TestOrderFlow","","","test_create_order_data_driven[case_data1]",""
+"passed","Sun Sep 21 14:46:27 CST 2025","Sun Sep 21 14:46:27 CST 2025","12","test_cases","test_order_flow","TestOrderFlow","","","下单功能数据驱动测试 - 9990","测试数据: 用户=test_user, 商品=9990, 数量=1, 预期=should_fail"

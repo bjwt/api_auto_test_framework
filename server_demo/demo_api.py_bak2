@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+# Mock user database
+fake_users_db = {"test_user": {"password": "test123456", "token": "fake_token_123"}}
+fake_items_db = {
+    1: {"name": "Test Item 1", "price": 99.9, "stock": 100},
+    2: {"name": "Test Item 2", "price": 199.9, "stock": 50},
+    888: {"name": "Test Item 888", "price": 999.9, "stock": 10}  # Added item ID=888
+}
+
+@app.route('/api/login', methods=['POST'])
+def login():
+    """Login API"""
+    login_data = request.get_json()
+    username = login_data.get('username')
+    password = login_data.get('password')
+
+    user = fake_users_db.get(username)
+    if not user or user["password"] != password:
+        return jsonify({"code": 401, "msg": "Invalid username or password"}), 401
+
+    return jsonify({"code": 200, "msg": "Login succeeded", "token": user["token"]})
+
+@app.route('/api/order', methods=['POST'])
+def create_order():
+    """Order API"""
+    # Get token
+    auth_header = request.headers.get('Authorization')
+    if not auth_header or auth_header != 'Bearer fake_token_123':
+        return jsonify({"code": 401, "msg": "Invalid token"}), 401
+
+    # Get order data
+    order_data = request.get_json()
+    item_id = order_data.get('item_id')
+    quantity = order_data.get('quantity', 1)
+
+    item = fake_items_db.get(item_id)
+    if not item:
+        return jsonify({"code": 404, "msg": "Item not found"}), 404
+
+    if item["stock"] < quantity:
+        return jsonify({"code": 400, "msg": "Insufficient stock"}), 400
+
+    # Mock stock deduction
+    item["stock"] -= quantity
+    order_id = 10000  # Mock generated order ID
+
+    return jsonify({
+        "code": 200,
+        "msg": "Order succeeded",
+        "data": {
+            "order_id": order_id,
+            "item_name": item["name"],
+            "total_price": item["price"] * quantity
+        }
+    })
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000, debug=True)

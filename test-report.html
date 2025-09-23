@@ -253,7 +253,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>test-report.html</h1>
-    <p>Report generated on 20-Sep-2025 at 22:56:44 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 21-Sep-2025 at 13:36:02 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -269,7 +269,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.6.8</td></tr></table>
     <h2>Summary</h2>
-    <p>4 tests ran in 0.20 seconds. </p>
+    <p>4 tests ran in 0.16 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
@@ -289,12 +289,12 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test_order_flow.TestOrderFlow object at 0x7fb5776840f0&gt;<br/><br/>    @allure.story(&quot;用户成功下单流程&quot;)<br/>    @allure.title(&quot;正向用例：登录后成功创建订单&quot;)<br/>    def test_login_and_create_order_success(self):<br/>        &quot;&quot;&quot;测试用户登录后能否成功下单&quot;&quot;&quot;<br/>        # 准备测试数据<br/>        username = &quot;test_user&quot;<br/>        password = &quot;test1234567&quot;<br/>        item_id = 1<br/>        quantity = 2<br/>    <br/>        # 执行业务流程<br/>&gt;       order_id = self.order_business.create_order_flow(username, password, item_id, quantity)<br/><br/>test_cases/test_order_flow.py:39: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>business/order_business.py:44: in create_order_flow<br/>    session = self.login_and_get_session(username, password)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;business.order_business.OrderBusiness object at 0x7fb56fc647f0&gt;, username = &#x27;test_user&#x27;, password = &#x27;test1234567&#x27;<br/><br/>    def login_and_get_session(self, username, password):<br/>        &quot;&quot;&quot;<br/>        业务逻辑：登录并获取已认证的session<br/>        :return: 携带token的session对象<br/>        &quot;&quot;&quot;<br/>        # 调用API Object层<br/>        login_api = LoginApi()<br/>        response = login_api.login(username, password)<br/>    <br/>        if response.status_code != 200:<br/>&gt;           raise Exception(f&quot;登录失败: {response.text}&quot;)<br/><span class="error">E           Exception: 登录失败: {</span><br/><span class="error">E             &quot;code&quot;: 401, </span><br/><span class="error">E             &quot;msg&quot;: &quot;\u7528\u6237\u540d\u6216\u5bc6\u7801\u9519\u8bef&quot;</span><br/><span class="error">E           }</span><br/><br/>business/order_business.py:22: Exception<br/></div></td></tr></tbody>
+            <div class="log">self = &lt;test_order_flow.TestOrderFlow object at 0x7f7eb0377128&gt;<br/><br/>    @allure.story(&quot;用户成功下单流程&quot;)<br/>    @allure.title(&quot;正向用例：登录后成功创建订单&quot;)<br/>    def test_login_and_create_order_success(self):<br/>        &quot;&quot;&quot;测试用户登录后能否成功下单&quot;&quot;&quot;<br/>        # 准备测试数据<br/>        username = &quot;test_user&quot;<br/>        password = &quot;test1234560&quot;<br/>        item_id = 1<br/>        quantity = 2<br/>    <br/>        # 执行业务流程<br/>&gt;       order_id = self.order_business.create_order_flow(username, password, item_id, quantity)<br/><br/>test_cases/test_order_flow.py:39: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>business/order_business.py:44: in create_order_flow<br/>    session = self.login_and_get_session(username, password)<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;business.order_business.OrderBusiness object at 0x7f7eafd0a7f0&gt;, username = &#x27;test_user&#x27;, password = &#x27;test1234560&#x27;<br/><br/>    def login_and_get_session(self, username, password):<br/>        &quot;&quot;&quot;<br/>        业务逻辑：登录并获取已认证的session<br/>        :return: 携带token的session对象<br/>        &quot;&quot;&quot;<br/>        # 调用API Object层<br/>        login_api = LoginApi()<br/>        response = login_api.login(username, password)<br/>    <br/>        if response.status_code != 200:<br/>&gt;           raise Exception(f&quot;登录失败: {response.text}&quot;)<br/><span class="error">E           Exception: 登录失败: {&quot;code&quot;: 401, &quot;msg&quot;: &quot;用户名或密码错误&quot;}</span><br/><br/>business/order_business.py:22: Exception<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_cases/test_order_flow.py::TestOrderFlow::test_create_order_data_driven[case_data0]</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -304,15 +304,11 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_cases/test_order_flow.py::TestOrderFlow::test_create_order_data_driven[case_data1]</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>✅ 用例通过 - 符合预期失败: 下单失败: {
-  &quot;code&quot;: 404, 
-  &quot;msg&quot;: &quot;\u5546\u54c1\u4e0d\u5b58\u5728&quot;
-}
-
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>✅ 用例通过 - 符合预期失败: 下单失败: {&quot;code&quot;: 404, &quot;msg&quot;: &quot;商品不存在&quot;}
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
@@ -322,9 +318,5 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>✅ 用例通过 - 符合预期失败: 下单失败: {
-  &quot;code&quot;: 400, 
-  &quot;msg&quot;: &quot;\u5e93\u5b58\u4e0d\u8db3&quot;
-}
-
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>✅ 用例通过 - 符合预期失败: 下单失败: {&quot;code&quot;: 400, &quot;msg&quot;: &quot;库存不足&quot;}
 <br/></div></td></tr></tbody></table></body></html>
