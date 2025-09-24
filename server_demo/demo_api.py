@@ -4,6 +4,9 @@ import json
 
 app = Flask(__name__)
 
+# 订单ID计数器
+order_counter = 10000
+
 def json_response(data: dict, status: int = 200, pretty: bool = True):
     """
     通用 JSON 响应函数
@@ -18,6 +21,12 @@ def json_response(data: dict, status: int = 200, pretty: bool = True):
 
     return Response(body, status=status, mimetype="application/json")
 
+def generate_order_id():
+    """生成递增订单ID"""
+    global order_counter
+    order_id = order_counter
+    order_counter += 1
+    return order_id
 
 # 模拟用户数据库
 fake_users_db = {"test_user": {"password": "test123456", "token": "fake_token_123"}}
@@ -39,7 +48,6 @@ def login():
 
     return json_response({"code": 200, "msg": "登录成功", "token": user["token"]})
 
-
 @app.route('/api/order', methods=['POST'])
 def create_order():
     auth_header = request.headers.get('Authorization')
@@ -59,7 +67,7 @@ def create_order():
 
     # 扣减库存
     item["stock"] -= quantity
-    order_id = 10000
+    order_id = generate_order_id()
 
     return json_response({
         "code": 200,
@@ -71,7 +79,5 @@ def create_order():
         }
     })
 
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
-

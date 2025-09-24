@@ -31,7 +31,7 @@ class TestOrderFlow:
         """测试用户登录后能否成功下单"""
         # 准备测试数据
         username = "test_user"
-        password = "test1234560"
+        password = "test123456"
         item_id = 1
         quantity = 2
         
@@ -42,7 +42,7 @@ class TestOrderFlow:
         assert order_id is not None, "订单ID不应为空"
         assert isinstance(order_id, int), "订单ID应为整数"
         allure.attach(f"订单创建成功，订单ID: {order_id}", name="订单信息")
-        print(f"✅ 下单成功，订单ID: {order_id}")
+        print(f"下单成功，订单ID: {order_id}")
     
     @allure.story("数据驱动测试")
     @allure.title("下单功能数据驱动测试 - {case_data[item_id]}")
@@ -63,7 +63,7 @@ class TestOrderFlow:
             # 断言订单创建成功
             assert result is not None, "预期下单成功，但订单ID为空"
             assert isinstance(result, int), "订单ID应为整数"
-            print(f"✅ 用例通过 - 成功创建订单，订单ID: {result}")
+            print(f"用例通过 - 成功创建订单，订单ID: {result}")
             
         else:
             # 预期失败的测试用例 - 使用pytest.raises捕获异常
@@ -78,4 +78,4 @@ class TestOrderFlow:
             # 验证异常信息中包含预期的错误内容
             error_message = str(exc_info.value)
             assert "失败" in error_message or "错误" in error_message or "不存在" in error_message
-            print(f"✅ 用例通过 - 符合预期失败: {error_message}")
+            print(f"用例通过 - 符合预期失败: {error_message}")

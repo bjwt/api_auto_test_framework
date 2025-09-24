@@ -1,0 +1,7 @@
+curl -X POST http://localhost:8000/api/order -H "Content-Type:application/json" -H "Authorization:Bearer fake_token_123" -d '{"item_id":888,"quantity":2}'
+
+pytest test_cases/test_order_flow.py -v --alluredir=./allure-results
+
+# 使用Python启动一个简单的HTTP服务器来查看结果文件
+allure generate allure-results -o allure-report --clean
+python -m http.server 8001
