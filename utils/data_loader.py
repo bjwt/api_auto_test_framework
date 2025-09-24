@@ -46,7 +46,7 @@ def load_test_data(data_type):
                 'username': 'test_user',
                 'password': 'test123456', 
                 'item_id': 1,           # 存在的商品 → 预期成功
-                'quantity': 2,
+                'quantity': 200000,
                 'expected': 'should_success'
             },
         ]
